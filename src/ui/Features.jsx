@@ -32,14 +32,14 @@ function Features() {
   return (
     <StyledFeatures>
       <Fade triggerOnce>
-        <AttentionSeeker triggerOnce>
-          <Link
-            to="https://www.instagram.com/jeszcze_strona_albo_sto"
-            target="_blank"
-          >
+        <Link
+          to="https://www.instagram.com/jeszcze_strona_albo_sto"
+          target="_blank"
+        >
+          <AttentionSeeker triggerOnce>
             <IMG src="public/IG.webp" alt="instagram logo" />
-          </Link>
-        </AttentionSeeker>
+          </AttentionSeeker>
+        </Link>
         <AttentionSeeker delay={100} triggerOnce>
           <Link>
             <IMG src="public/LC.webp" alt="lubimyczytać logo" />
