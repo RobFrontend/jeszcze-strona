@@ -32,22 +32,22 @@ function Features() {
   return (
     <StyledFeatures>
       <Fade triggerOnce>
-        <Link
-          to="https://www.instagram.com/jeszcze_strona_albo_sto"
-          target="_blank"
-        >
-          <AttentionSeeker triggerOnce>
-            <IMG src="public/IG.webp" alt="instagram logo" />
-          </AttentionSeeker>
-        </Link>
+        <AttentionSeeker triggerOnce>
+          <Link
+            to="https://www.instagram.com/jeszcze_strona_albo_sto"
+            target="_blank"
+          >
+            <IMG src="IG.webp" alt="instagram logo" />
+          </Link>
+        </AttentionSeeker>
         <AttentionSeeker delay={100} triggerOnce>
           <Link>
-            <IMG src="public/LC.webp" alt="lubimyczytać logo" />
+            <IMG src="LC.webp" alt="lubimyczytać logo" />
           </Link>
         </AttentionSeeker>
         <AttentionSeeker delay={200} triggerOnce>
           <Link>
-            <IMG src="public/GR.webp" alt="good reviewslogo" />
+            <IMG src="GR.webp" alt="good reviewslogo" />
           </Link>
         </AttentionSeeker>
         <AttentionSeeker delay={300} triggerOnce>
@@ -55,7 +55,7 @@ function Features() {
             to="https://www.tiktok.com/@jeszcze_strona_albo_sto"
             target="_blank"
           >
-            <IMG src="public/TK.webp" alt="tiktok logo" />
+            <IMG src="TK.webp" alt="tiktok logo" />
           </Link>
         </AttentionSeeker>
       </Fade>
