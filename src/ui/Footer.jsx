@@ -44,7 +44,7 @@ const FooterMenu = styled.div`
   justify-content: center;
   justify-items: center;
   color: var(--font-medium-dark);
-  font-weight: 300;
+  font-weight: 400;
 `;
 
 const Pmenu = styled.p`
