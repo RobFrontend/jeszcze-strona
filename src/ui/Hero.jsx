@@ -7,7 +7,6 @@ const StyledHero = styled.section`
   background: url("HeroBG.webp");
   background-position: bottom;
   background-size: cover;
-
   display: grid;
 `;
 

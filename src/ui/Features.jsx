@@ -41,12 +41,18 @@ function Features() {
           </Link>
         </AttentionSeeker>
         <AttentionSeeker delay={100} triggerOnce>
-          <Link>
+          <Link
+            to="https://lubimyczytac.pl/profil/2120761/jeszcze-strona"
+            target="_blank"
+          >
             <IMG src="LC.webp" alt="lubimyczytać logo" />
           </Link>
         </AttentionSeeker>
         <AttentionSeeker delay={200} triggerOnce>
-          <Link>
+          <Link
+            to="https://www.goodreads.com/user/show/175187972-jeszcze-strona-albo-sto"
+            target="_blank"
+          >
             <IMG src="GR.webp" alt="good reviewslogo" />
           </Link>
         </AttentionSeeker>

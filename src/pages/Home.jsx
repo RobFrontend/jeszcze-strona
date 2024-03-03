@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Hero from "../ui/Hero";
 import Heading from "../ui/Heading";
 import BackDropBlur from "../ui/BackDropBlur";
-import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import LinkButton from "../ui/LinkButton";
 import Features from "../ui/Features";
 import StyledHeroContent from "../ui/StyledHeroContent";

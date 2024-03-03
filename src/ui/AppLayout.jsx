@@ -4,7 +4,9 @@ import Footer from "./Footer";
 import styled from "styled-components";
 import Headroom from "react-headroom";
 
-const Main = styled.main``;
+const Main = styled.main`
+  overflow: hidden;
+`;
 
 function AppLayout() {
   return (

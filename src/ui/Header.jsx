@@ -1,9 +1,11 @@
-import { useEffect } from "react";
-import { Fade, Slide } from "react-awesome-reveal";
-import { NavLink, useLocation } from "react-router-dom";
+import { Slide } from "react-awesome-reveal";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import LogoButton from "./LogoButton";
+import { onClickScroll } from "./HandleScrollTop";
 
 const StyledHeader = styled.header`
+  overflow: hidden;
   padding: 1.8rem 3.2rem;
   display: flex;
   justify-content: space-between;
@@ -44,36 +46,31 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const Logo = styled.button`
-  font-family: "Clicker Script", cursive;
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: var(--font-verylight-dark);
-  filter: drop-shadow(5px 5px 15px var(--font-medium-dark));
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`;
-
 function Header() {
-  const handleClickScroll = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
-  console.log(window);
   return (
     <StyledHeader>
       <Nav>
         <Slide direction="left" triggerOnce>
-          <Logo onClick={handleClickScroll}>JeszczeStronaAlboSto</Logo>
+          <LogoButton />
         </Slide>
       </Nav>
       <Slide direction="right" triggerOnce>
         <Nav>
-          <StyledNavLink to="/home">Strona Główna</StyledNavLink>
-          <StyledNavLink to="/omnie">O Mnie</StyledNavLink>
-          <StyledNavLink to="/blog">Blog</StyledNavLink>
-          <StyledNavLink to="/wspolpraca">Współpraca</StyledNavLink>
-          <StyledNavLink to="/kontakt">Kontakt</StyledNavLink>
+          <StyledNavLink to="/home" onClick={onClickScroll}>
+            Strona Główna
+          </StyledNavLink>
+          <StyledNavLink to="/omnie" onClick={onClickScroll}>
+            O Mnie
+          </StyledNavLink>
+          <StyledNavLink to="/blog" onClick={onClickScroll}>
+            Blog
+          </StyledNavLink>
+          <StyledNavLink to="/wspolpraca" onClick={onClickScroll}>
+            Współpraca
+          </StyledNavLink>
+          <StyledNavLink to="/kontakt" onClick={onClickScroll}>
+            Kontakt
+          </StyledNavLink>
         </Nav>
       </Slide>
     </StyledHeader>
