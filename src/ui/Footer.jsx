@@ -44,7 +44,11 @@ const FooterMenu = styled.div`
   justify-content: center;
   justify-items: center;
   color: var(--font-medium-dark);
-  font-weight: 400;
+  font-weight: 300;
+`;
+
+const Pmenu = styled.p`
+  margin-bottom: 0.6rem;
 `;
 
 const FooterCopy = styled.p`
@@ -73,32 +77,32 @@ function Footer() {
           <Fade delay={500} triggerOnce>
             <FooterMenu>
               <div>
-                <p>
+                <Pmenu>
                   <StyledFooterNavLink to="/blog" onClick={onClickScroll}>
                     Blog
                   </StyledFooterNavLink>
-                </p>
-                <p>
+                </Pmenu>
+                <Pmenu>
                   <StyledFooterNavLink to="/wspolpraca" onClick={onClickScroll}>
                     Współpraca
                   </StyledFooterNavLink>
-                </p>
+                </Pmenu>
               </div>
               <div>
-                <p>
+                <Pmenu>
                   <StyledFooterNavLink to="/omnie" onClick={onClickScroll}>
                     O mnie
                   </StyledFooterNavLink>
-                </p>
-                <p>
+                </Pmenu>
+                <Pmenu>
                   <StyledFooterNavLink to="/kontakt" onClick={onClickScroll}>
                     Kontakt
                   </StyledFooterNavLink>
-                </p>
+                </Pmenu>
               </div>
               <div>
-                <p>E-mail: jeszczestronaalbo100@gmail.com</p>
-                <p>
+                <Pmenu>E-mail: jeszczestronaalbo100@gmail.com</Pmenu>
+                <Pmenu>
                   Instagram:{" "}
                   <StyledFooterLink
                     to="https://www.instagram.com/jeszcze_strona_albo_sto/"
@@ -106,7 +110,7 @@ function Footer() {
                   >
                     jeszcze_strona_albo_sto
                   </StyledFooterLink>
-                </p>
+                </Pmenu>
               </div>
             </FooterMenu>
           </Fade>
