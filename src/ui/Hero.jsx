@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledHero = styled.section`
+const StyledHero = styled.div`
   min-height: 90vh;
   overflow: hidden;
   position: relative;

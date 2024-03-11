@@ -4,6 +4,19 @@ import Hero from "../ui/Hero";
 import StyledHeroContent from "../ui/StyledHeroContent";
 import Heading from "../ui/Heading";
 import Features from "../ui/Features";
+import styled from "styled-components";
+import ArticleBox from "../features/blog/ArticleBox";
+import Sort from "../features/blog/Sort";
+
+const BlogBoxes = styled.section`
+  background: linear-gradient(
+    to top right,
+    var(--font-dark-white),
+    var(--font-light-white)
+  );
+  background-size: 200%;
+  background-position: center;
+`;
 
 function Blog() {
   return (
@@ -25,6 +38,11 @@ function Blog() {
         </BackDropBlur>
       </Hero>
       <Features />
+      <BlogBoxes>
+        <Sort />
+        <ArticleBox />
+        <ArticleBox />
+      </BlogBoxes>
     </>
   );
 }

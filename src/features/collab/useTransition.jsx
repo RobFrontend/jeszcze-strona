@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TextTransition, { presets } from "react-text-transition";
 
-const collabText = ["wydawnictwam", "autoram", "czytelnikam"];
+const collabText = ["wydawnictwam", "autoram", "księgarniam"];
 function UseTransition() {
   const [index, setIndex] = useState(0);
   useEffect(() => {

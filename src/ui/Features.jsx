@@ -2,7 +2,7 @@ import { AttentionSeeker, Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const StyledFeatures = styled.section`
+const StyledFeatures = styled.div`
   padding: 3.2rem;
   display: flex;
   align-items: center;
@@ -15,6 +15,7 @@ const StyledFeatures = styled.section`
   );
   background-size: 200%;
   background-position: center;
+  box-shadow: var(--shadow-md);
 `;
 
 const IMG = styled.img`

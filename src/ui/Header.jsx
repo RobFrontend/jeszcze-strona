@@ -36,7 +36,8 @@ const StyledNavLink = styled(NavLink)`
   &:hover {
     opacity: 0.8;
     border: 1px solid var(--font-light-dark);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius-tiny);
   }
 
   &:active,

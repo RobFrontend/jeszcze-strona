@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
   --color-dark-brown: #4c4442;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
 
   --border-radius-tiny: 3px;
@@ -42,6 +42,7 @@ const GlobalStyles = createGlobalStyle`
   transition: background-color 0.5s, box-shadow 0.5s, color 0.5s, border-radius .5s, opacity 0.5s, border 0.5s
 
 }
+
 html{
   font-size: 62.5%;
 }
@@ -63,11 +64,37 @@ textarea,
 label,
 input {
   font-size: 1.8rem;
-  
+  font-family: inherit;
+  border: none;
+color: var(--font-dark-dark);
 }
 label{
   text-transform: capitalize;
+font-size: 1.6rem;
+margin-right: 0.8rem;
+letter-spacing: -0.5px;
+}
 
+input,
+select{
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--border-radius-md);
+}
+
+input:focus{
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 0px 4px var(--font-verylight-dark);
+}
+
+option{
+  border: none;
+  outline: none;
+}
+
+section{
+  padding-top: 4.8rem;
+  padding-bottom: 8rem;
 }
 
 p,
@@ -77,6 +104,10 @@ h3,
 h4 {
   overflow-wrap: break-word;
   hyphens: auto;
+}
+
+p, span {
+  color: var(--font-dark-dark);
 }
 
 img {

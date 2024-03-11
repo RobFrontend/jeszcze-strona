@@ -6,7 +6,6 @@ const Heading = styled.h1`
     css`
       font-size: 9.6rem;
       text-transform: capitalize;
-
       color: var(--font-dark-white);
       font-family: "Clicker Script", cursive;
     `}
@@ -19,12 +18,15 @@ const Heading = styled.h1`
     props.as === "h3" &&
     css`
       font-size: 3.2rem;
+      color: var(--font-light-dark);
+      letter-spacing: -1.5px;
     `}
   ${(props) =>
     props.as === "h4" &&
     css`
       font-size: 2.4rem;
-      color: var(--font-dark-dark);
+      letter-spacing: -1px;
+      color: var(--font-medium-dark);
     `}
 `;
 
