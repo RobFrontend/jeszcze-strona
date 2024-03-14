@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(10px);
-
+  height: 8rem;
   background: linear-gradient(
     to bottom right,
     var(--font-dark-white),

@@ -30,3 +30,6 @@ Thriller
 Kryminał
 Klasyka
 Dramat
+Obyczajowa
+Horror
+YoungAdult

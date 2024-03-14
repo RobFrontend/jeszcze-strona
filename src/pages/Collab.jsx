@@ -29,6 +29,8 @@ const WydawnictwaBoxes = styled.div`
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
+  padding-bottom: 4.8rem;
+  padding-top: 3.2rem;
 `;
 
 const CollabSection = styled.section`
@@ -45,71 +47,95 @@ function Collab() {
   return (
     <>
       <Hero>
-        <BackDropBlur>
-          <StyledHeroContent>
-            <Fade direction="down">
-              <Heading as="h1" className="hero-h1">
-                Jeszcze Strona Albo Sto
-              </Heading>
-            </Fade>
-            <Fade delay={500} triggerOnce>
-              <Heading as="h2" className="hero-h2">
-                Współpracuję z różnymi <UseTransition />i
-              </Heading>
-            </Fade>
-          </StyledHeroContent>
-        </BackDropBlur>
+        {/* <BackDropBlur> */}
+        <StyledHeroContent>
+          <Fade direction="down">
+            <Heading as="h1" className="hero-h1">
+              Jeszcze Strona Albo Sto
+            </Heading>
+          </Fade>
+          <Fade delay={500} triggerOnce>
+            <Heading as="h2" className="hero-h2">
+              Współpracuję z różnymi <UseTransition />i
+            </Heading>
+          </Fade>
+        </StyledHeroContent>
+        {/* </BackDropBlur> */}
       </Hero>
       <Features />
-      <CollabSection>
-        <Container>
-          <Heading as="h2">Współprace</Heading>
-          <WydawnictwaBoxes>
-            <Fade>
-              <LogoIMG src="LogoAnimi.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={100} triggerOnce>
-              <LogoIMG src="LogoBeya.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={200} triggerOnce>
-              <LogoIMG src="LogoEditio.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={300} triggerOnce>
-              <LogoIMG src="LogoLuna.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={400} triggerOnce>
-              <LogoIMG src="LogoMediaRodzina.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={500} triggerOnce>
-              <LogoIMG src="LogoNowaBasn.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={600} triggerOnce>
-              <LogoIMG src="LogoPapierowyKsiezyc.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={700} triggerOnce>
-              <LogoIMG src="LogoPhantomBooks.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={800} triggerOnce>
-              <LogoIMG src="LogoSpisekPisarzy.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={900} triggerOnce>
-              <LogoIMG src="LogoVesper.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={1000} triggerOnce>
-              <LogoIMG
-                src="LogoWydawnictwoKobiece.webp"
-                alt="logo wydawnictwa"
-              />
-            </Fade>
-            <Fade delay={1100} triggerOnce>
-              <LogoIMG src="LogoYouYa.webp" alt="logo wydawnictwa" />
-            </Fade>
-            <Fade delay={1200} triggerOnce>
-              <LogoIMG src="LogoZnak.webp" alt="logo wydawnictwa" />
-            </Fade>
-          </WydawnictwaBoxes>
-        </Container>
-      </CollabSection>
+      <Fade triggerOnce>
+        <CollabSection>
+          <Container>
+            <Heading
+              as="h2"
+              style={{ marginBottom: " 4.8rem", marginTop: "2.4rem" }}
+            >
+              Moje współprace
+            </Heading>
+            <Heading as="h3" style={{ textAlign: "center" }}>
+              Księgarnie oraz wydawnictwa
+            </Heading>
+            <WydawnictwaBoxes>
+              <Fade>
+                <LogoIMG src="LogoAnimi.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={100} triggerOnce>
+                <LogoIMG src="LogoBeya.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={200} triggerOnce>
+                <LogoIMG src="LogoEditio.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={300} triggerOnce>
+                <LogoIMG src="LogoLuna.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={400} triggerOnce>
+                <LogoIMG src="LogoMediaRodzina.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={500} triggerOnce>
+                <LogoIMG src="LogoNowaBasn.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={600} triggerOnce>
+                <LogoIMG
+                  src="LogoPapierowyKsiezyc.webp"
+                  alt="logo wydawnictwa"
+                />
+              </Fade>
+              <Fade delay={700} triggerOnce>
+                <LogoIMG src="LogoPhantomBooks.webp" alt="logo wydawnictwa" />
+              </Fade>
+
+              <Fade delay={900} triggerOnce>
+                <LogoIMG src="LogoVesper.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={1000} triggerOnce>
+                <LogoIMG
+                  src="LogoWydawnictwoKobiece.webp"
+                  alt="logo wydawnictwa"
+                />
+              </Fade>
+              <Fade delay={1100} triggerOnce>
+                <LogoIMG src="LogoYouYa.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={1200} triggerOnce>
+                <LogoIMG src="LogoZnak.webp" alt="logo wydawnictwa" />
+              </Fade>
+              <Fade delay={800} triggerOnce>
+                <LogoIMG src="LogoSpisekPisarzy.webp" alt="logo wydawnictwa" />
+              </Fade>
+            </WydawnictwaBoxes>
+            <Heading as="h3" style={{ textAlign: "center" }}>
+              Autorzy
+            </Heading>
+            <WydawnictwaBoxes>
+              <Fade delay={500} triggerOnce>
+                <Heading as="h4">Katarzyna Wierzbicka</Heading>
+                <Heading as="h4">Agata Konefał</Heading>
+                <Heading as="h4">Marek Zychla</Heading>
+              </Fade>
+            </WydawnictwaBoxes>
+          </Container>
+        </CollabSection>
+      </Fade>
     </>
   );
 }

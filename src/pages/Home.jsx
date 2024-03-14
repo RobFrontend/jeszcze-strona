@@ -19,31 +19,31 @@ function Home() {
   return (
     <>
       <Hero>
-        <BackDropBlur>
-          <StyledHeroContent>
-            <Fade direction="down">
-              <Heading as="h1" className="hero-h1">
-                Jeszcze Strona Albo Sto
-              </Heading>
-            </Fade>
-            <Fade delay={500} triggerOnce>
-              <Heading as="h2" className="hero-h2">
-                Lubię książki, a książki lubią mnie
-              </Heading>
-              <Heading as="h2" className="hero-h2">
-                Recenzje z pasji do literatury
-              </Heading>
-              <HeroButtonBox>
-                <LinkButton variation="dark" to="/omnie">
-                  O mnie
-                </LinkButton>
-                <LinkButton variation="light" to="/wspolpraca">
-                  Współpraca
-                </LinkButton>
-              </HeroButtonBox>
-            </Fade>
-          </StyledHeroContent>
-        </BackDropBlur>
+        {/* <BackDropBlur> */}
+        <StyledHeroContent>
+          <Fade direction="down">
+            <Heading as="h1" className="hero-h1">
+              Jeszcze Strona Albo Sto
+            </Heading>
+          </Fade>
+          <Fade delay={500} triggerOnce>
+            <Heading as="h2" className="hero-h2">
+              Lubię książki, a książki lubią mnie
+            </Heading>
+            <Heading as="h2" className="hero-h2">
+              Recenzje z pasji do literatury
+            </Heading>
+            <HeroButtonBox>
+              <LinkButton variation="dark" to="/omnie">
+                O mnie
+              </LinkButton>
+              <LinkButton variation="light" to="/wspolpraca">
+                Współpraca
+              </LinkButton>
+            </HeroButtonBox>
+          </Fade>
+        </StyledHeroContent>
+        {/* </BackDropBlur> */}
       </Hero>
       <Features />
     </>

@@ -11,26 +11,26 @@ function PageNotFound() {
     <>
       <Header />
       <Hero>
-        <BackDropBlur>
-          <StyledHeroContent>
-            <Fade direction="down">
-              <Hinge triggerOnce>
-                <Heading as="h1" className="hero-h1">
-                  Jeszcze Strona Albo Sto
-                </Heading>
-              </Hinge>
-            </Fade>
-            <Fade>
-              <Heading as="h2" className="hero-h2">
-                Nie znaleziono strony 😥
+        {/* <BackDropBlur> */}
+        <StyledHeroContent>
+          <Fade direction="down">
+            <Hinge triggerOnce>
+              <Heading as="h1" className="hero-h1">
+                Jeszcze Strona Albo Sto
               </Heading>
+            </Hinge>
+          </Fade>
+          <Fade>
+            <Heading as="h2" className="hero-h2">
+              Nie znaleziono strony 😥
+            </Heading>
 
-              <Heading as="h2" className="hero-h2">
-                (zły adres)
-              </Heading>
-            </Fade>
-          </StyledHeroContent>
-        </BackDropBlur>
+            <Heading as="h2" className="hero-h2">
+              (zły adres)
+            </Heading>
+          </Fade>
+        </StyledHeroContent>
+        {/* </BackDropBlur> */}
       </Hero>
       <Features />
     </>

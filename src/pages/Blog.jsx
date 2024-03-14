@@ -22,20 +22,20 @@ function Blog() {
   return (
     <>
       <Hero>
-        <BackDropBlur>
-          <StyledHeroContent>
-            <Fade direction="down">
-              <Heading as="h1" className="hero-h1">
-                Jeszcze Strona Albo Sto
-              </Heading>
-            </Fade>
-            <Fade delay={500} triggerOnce>
-              <Heading as="h2" className="hero-h2">
-                Witaj na moim blogu!
-              </Heading>
-            </Fade>
-          </StyledHeroContent>
-        </BackDropBlur>
+        {/* <BackDropBlur> */}
+        <StyledHeroContent>
+          <Fade direction="down">
+            <Heading as="h1" className="hero-h1">
+              Jeszcze Strona Albo Sto
+            </Heading>
+          </Fade>
+          <Fade delay={500} triggerOnce>
+            <Heading as="h2" className="hero-h2">
+              Witaj na moim blogu!
+            </Heading>
+          </Fade>
+        </StyledHeroContent>
+        {/* </BackDropBlur> */}
       </Hero>
       <Features />
       <BlogBoxes>
