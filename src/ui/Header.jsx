@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import LogoButton from "./LogoButton";
 import { onClickScroll } from "./HandleScrollTop";
+import { useState } from "react";
 
 const StyledHeader = styled.header`
   overflow: hidden;
@@ -21,9 +22,16 @@ const StyledHeader = styled.header`
   background-position: center;
 `;
 
+const NavLogo = styled.nav`
+  display: flex;
+  gap: 3.2rem;
+`;
 const Nav = styled.nav`
   display: flex;
   gap: 3.2rem;
+  @media screen and (max-width: 935px) {
+    display: none;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -47,34 +55,115 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const Menu = styled.button`
+  @media screen and (min-width: 935px) {
+    display: none;
+  }
+`;
+
+const NavMobile = styled.nav`
+  /* position: absolute;
+  right: 0px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  min-height: 95vh;
+  gap: 3.2rem;
+  padding: 1.8rem;
+  z-index: 5;
+  background-color: rgba(242, 242, 241, 0.9);
+`;
+
 function Header() {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
-    <StyledHeader>
-      <Nav>
-        <Slide direction="left" triggerOnce>
-          <LogoButton />
+    <>
+      <StyledHeader>
+        <NavLogo>
+          <Slide direction="left" triggerOnce>
+            <LogoButton />
+          </Slide>
+        </NavLogo>
+        <Slide direction="right" triggerOnce>
+          <Nav>
+            <StyledNavLink to="/home" onClick={onClickScroll}>
+              Strona Główna
+            </StyledNavLink>
+            <StyledNavLink to="/omnie" onClick={onClickScroll}>
+              O Mnie
+            </StyledNavLink>
+            <StyledNavLink to="/blog" onClick={onClickScroll}>
+              Blog
+            </StyledNavLink>
+            <StyledNavLink to="/wspolpraca" onClick={onClickScroll}>
+              Współpraca
+            </StyledNavLink>
+            <StyledNavLink to="/kontakt" onClick={onClickScroll}>
+              Kontakt
+            </StyledNavLink>
+          </Nav>
+          {window.innerWidth < 935 ? (
+            <Menu onClick={() => setNavOpen(!navOpen)}>
+              {navOpen ? "Menu Opened" : "Menu Closed"}
+            </Menu>
+          ) : null}
         </Slide>
-      </Nav>
-      <Slide direction="right" triggerOnce>
-        <Nav>
-          <StyledNavLink to="/home" onClick={onClickScroll}>
-            Strona Główna
-          </StyledNavLink>
-          <StyledNavLink to="/omnie" onClick={onClickScroll}>
-            O Mnie
-          </StyledNavLink>
-          <StyledNavLink to="/blog" onClick={onClickScroll}>
-            Blog
-          </StyledNavLink>
-          <StyledNavLink to="/wspolpraca" onClick={onClickScroll}>
-            Współpraca
-          </StyledNavLink>
-          <StyledNavLink to="/kontakt" onClick={onClickScroll}>
-            Kontakt
-          </StyledNavLink>
-        </Nav>
-      </Slide>
-    </StyledHeader>
+      </StyledHeader>
+      {navOpen ? (
+        <Slide direction="right">
+          <NavMobile onClick={() => setNavOpen(!navOpen)}>
+            <StyledNavLink
+              to="/home"
+              onClick={() => {
+                onClickScroll();
+                setNavOpen(!navOpen);
+              }}
+            >
+              Strona Główna
+            </StyledNavLink>
+            <StyledNavLink
+              to="/omnie"
+              onClick={() => {
+                onClickScroll();
+                setNavOpen(!navOpen);
+              }}
+            >
+              O Mnie
+            </StyledNavLink>
+            <StyledNavLink
+              to="/blog"
+              onClick={() => {
+                onClickScroll();
+                setNavOpen(!navOpen);
+              }}
+            >
+              Blog
+            </StyledNavLink>
+            <StyledNavLink
+              to="/wspolpraca"
+              onClick={() => {
+                onClickScroll();
+                setNavOpen(!navOpen);
+              }}
+            >
+              Współpraca
+            </StyledNavLink>
+            <StyledNavLink
+              to="/kontakt"
+              onClick={() => {
+                onClickScroll();
+                setNavOpen(!navOpen);
+              }}
+            >
+              Kontakt
+            </StyledNavLink>
+          </NavMobile>
+        </Slide>
+      ) : null}
+    </>
   );
 }
 

@@ -47,6 +47,19 @@ html{
   font-size: 62.5%;
 }
 
+@media (max-width: 48em) {
+  html{
+  font-size: 56.25%;
+}
+}
+
+
+@media (max-width: 35em) {
+  html{
+  font-size: 52.5%;
+}
+}
+
 body{
   font-family: "Lato", sans-serif;
   scroll-behavior: smooth;
@@ -126,6 +139,14 @@ img {
   filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
  text-align: center;
 }
+.hero-h3{
+  color: var(--font-dark-white);
+  letter-spacing: -1.5px;
+  filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
+ text-align: center;
+}
+
+
 
 .p-article{
   font-family: "Lora", serif; 

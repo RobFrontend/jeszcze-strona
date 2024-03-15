@@ -56,7 +56,7 @@ function Collab() {
           </Fade>
           <Fade delay={500} triggerOnce>
             <Heading as="h2" className="hero-h2">
-              Współpracuję z różnymi <UseTransition />i
+              Współpracuję z <UseTransition />i
             </Heading>
           </Fade>
         </StyledHeroContent>
@@ -104,22 +104,22 @@ function Collab() {
                 <LogoIMG src="LogoPhantomBooks.webp" alt="logo wydawnictwa" />
               </Fade>
 
-              <Fade delay={900} triggerOnce>
+              <Fade delay={800} triggerOnce>
                 <LogoIMG src="LogoVesper.webp" alt="logo wydawnictwa" />
               </Fade>
-              <Fade delay={1000} triggerOnce>
+              <Fade delay={900} triggerOnce>
                 <LogoIMG
                   src="LogoWydawnictwoKobiece.webp"
                   alt="logo wydawnictwa"
                 />
               </Fade>
-              <Fade delay={1100} triggerOnce>
+              <Fade delay={1000} triggerOnce>
                 <LogoIMG src="LogoYouYa.webp" alt="logo wydawnictwa" />
               </Fade>
-              <Fade delay={1200} triggerOnce>
+              <Fade delay={1100} triggerOnce>
                 <LogoIMG src="LogoZnak.webp" alt="logo wydawnictwa" />
               </Fade>
-              <Fade delay={800} triggerOnce>
+              <Fade delay={1200} triggerOnce>
                 <LogoIMG src="LogoSpisekPisarzy.webp" alt="logo wydawnictwa" />
               </Fade>
             </WydawnictwaBoxes>

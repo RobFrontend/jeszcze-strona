@@ -45,6 +45,12 @@ const FooterMenu = styled.div`
   justify-items: center;
   color: var(--font-medium-dark);
   font-weight: 400;
+  @media (max-width: 48em) {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    justify-items: start;
+  }
 `;
 
 const Pmenu = styled.p`

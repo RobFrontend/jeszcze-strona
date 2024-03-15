@@ -8,6 +8,15 @@ const Heading = styled.h1`
       text-transform: capitalize;
       color: var(--font-dark-white);
       font-family: "Clicker Script", cursive;
+      @media screen and (max-width: 935px) {
+        font-size: 7.2rem;
+      }
+      @media screen and (max-width: 615px) {
+        font-size: 5.2rem;
+      }
+      @media screen and (max-width: 615px) {
+        font-size: 4.2rem;
+      }
     `}
   ${(props) =>
     props.as === "h2" &&

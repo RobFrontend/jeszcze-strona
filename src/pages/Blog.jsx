@@ -33,6 +33,10 @@ function Blog() {
             <Heading as="h2" className="hero-h2">
               Witaj na moim blogu!
             </Heading>
+            <Heading as="h3" className="hero-h3">
+              Zapraszam do odkrywania świata literatury razem ze mną. Przygotuj
+              się na recenzje, inspiracje i wiele więcej!
+            </Heading>
           </Fade>
         </StyledHeroContent>
         {/* </BackDropBlur> */}

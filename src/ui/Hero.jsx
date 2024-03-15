@@ -11,7 +11,7 @@ const StyledHero = styled.div`
   background: url("HeroBGBlur.webp");
   background-position: bottom;
   background-size: cover;
-  display: grid;
+  /* display: grid; */
 `;
 
 function Hero({ children }) {
