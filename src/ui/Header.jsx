@@ -5,6 +5,9 @@ import LogoButton from "./LogoButton";
 import { onClickScroll } from "./HandleScrollTop";
 import { useState } from "react";
 
+import { GrMenu } from "react-icons/gr";
+import { GrClose } from "react-icons/gr";
+
 const StyledHeader = styled.header`
   overflow: hidden;
   padding: 1.8rem 3.2rem;
@@ -56,6 +59,10 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const Menu = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.8rem;
   @media screen and (min-width: 935px) {
     display: none;
   }
@@ -105,9 +112,14 @@ function Header() {
               Kontakt
             </StyledNavLink>
           </Nav>
+
           {window.innerWidth < 935 ? (
             <Menu onClick={() => setNavOpen(!navOpen)}>
-              {navOpen ? "Menu Opened" : "Menu Closed"}
+              {navOpen ? (
+                <GrClose style={{ fontSize: "2.4rem" }} />
+              ) : (
+                <GrMenu style={{ fontSize: "2.4rem" }} />
+              )}
             </Menu>
           ) : null}
         </Slide>

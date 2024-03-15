@@ -194,7 +194,6 @@ img {
   background: transparent;
 }
 
-
 `;
 
 export default GlobalStyles;
