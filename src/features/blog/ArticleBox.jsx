@@ -33,6 +33,9 @@ const ArtContent = styled.div`
   grid-template-columns: 70fr 30fr;
   grid-column: 1/-1;
   gap: 1.8rem;
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const TextArt = styled.p`
@@ -53,11 +56,17 @@ const TextGatunek = styled.p`
   opacity: 0.8;
   font-weight: 500;
   letter-spacing: -0.5px;
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
 `;
 
 const ImgArt = styled.img`
   width: 100%;
   border-radius: var(--border-radius-sm);
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
 `;
 
 const ArtLink = styled(Link)`

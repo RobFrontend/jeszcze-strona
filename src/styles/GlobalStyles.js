@@ -135,13 +135,13 @@ img {
 
 .hero-h2{
   color: var(--font-dark-white);
-  letter-spacing: -3px;
+  letter-spacing: -1.5px;
   filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
  text-align: center;
 }
 .hero-h3{
   color: var(--font-dark-white);
-  letter-spacing: -1.5px;
+  letter-spacing: -0.5px;
   filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
  text-align: center;
 }
