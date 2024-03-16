@@ -213,6 +213,7 @@ img {
   align-items: flex-start;
   justify-content: flex-end;
   position: relative;
+  
 }
 .page {
   width: 50%;

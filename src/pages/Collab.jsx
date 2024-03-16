@@ -1,4 +1,4 @@
-import { Fade } from "react-awesome-reveal";
+import { Fade, Zoom } from "react-awesome-reveal";
 import BackDropBlur from "../ui/BackDropBlur";
 import Hero from "../ui/Hero";
 import StyledHeroContent from "../ui/StyledHeroContent";
@@ -9,6 +9,7 @@ import UseTransition from "../features/collab/useTransition";
 import Features from "../ui/Features";
 import Container from "../ui/Container";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const LogoIMG = styled.img`
   max-height: 10rem;
@@ -43,6 +44,55 @@ const CollabSection = styled.section`
   background-position: center;
 `;
 
+const CollabInvite = styled.div`
+  margin-bottom: 6.4rem;
+`;
+
+const CollabInviteBox = styled.div`
+  display: grid;
+  grid-template-columns: 70fr 30fr;
+  gap: 3.2rem;
+  justify-items: center;
+  @media (max-width: 35em) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const KontaktLink = styled(Link)`
+  color: var(--font-verylight-dark);
+
+  &:hover {
+    color: var(--font-light-dark);
+  }
+`;
+
+const Pkontakt = styled.p`
+  font-size: 2rem;
+  line-height: 1.5;
+  align-self: start;
+  padding-left: 1.8rem;
+  @media (max-width: 35em) {
+    font-size: 1.8rem;
+    text-align: justify;
+  }
+`;
+
+const IMGtransparent = styled.img`
+  max-height: 30rem;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.4)) brightness(0.95);
+  align-self: center;
+  opacity: 0.95;
+  transition: all 1s;
+  @media (max-width: 35em) {
+    max-height: 20rem;
+  }
+  &:hover {
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.4)) brightness(1);
+    opacity: 1;
+    transform: scale(1.05);
+  }
+`;
+
 function Collab() {
   return (
     <>
@@ -65,6 +115,38 @@ function Collab() {
       <Features />
       <Fade triggerOnce>
         <CollabSection>
+          <Container>
+            <CollabInvite>
+              <Heading
+                as="h2"
+                style={{ marginBottom: " 4.8rem", marginTop: "2.4rem" }}
+              >
+                Zapraszam do współpracy
+              </Heading>
+              <CollabInviteBox>
+                <Pkontakt>
+                  Otwarta na różnorodne współprace! <br></br>Jeśli jesteś
+                  autorem, wydawnictwem lub księgarnią poszukującą możliwości
+                  promocji lub recenzji - jestem tutaj dla Ciebie.<br></br>{" "}
+                  Skontaktuj się ze mną poprzez wiadomość DM na{" "}
+                  <KontaktLink
+                    to="https://www.instagram.com/jeszcze_strona_albo_sto/"
+                    target="_blank"
+                  >
+                    Instagramie{" "}
+                  </KontaktLink>
+                  lub napisz bezpośrednio na mój adres email:
+                  jeszczestronaalbo100@gmail.com - czekam na inspirujące
+                  projekty. <br></br>Razem możemy stworzyć coś wyjątkowego dla
+                  miłośników literatury!
+                </Pkontakt>
+
+                <Fade direction="up" triggerOnce>
+                  <IMGtransparent src="MonikaTransparent.webp" alt="Monika" />
+                </Fade>
+              </CollabInviteBox>
+            </CollabInvite>
+          </Container>
           <Container>
             <Heading
               as="h2"

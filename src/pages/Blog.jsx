@@ -22,8 +22,10 @@ function Blog() {
               Witaj na moim blogu!
             </Heading>
             <Heading as="h3" className="hero-h3">
-              Zapraszam do odkrywania świata literatury razem ze mną. Przygotuj
-              się na recenzje, inspiracje i wiele więcej!
+              Zapraszam do odkrywania świata literatury razem ze mną.
+            </Heading>
+            <Heading as="h3" className="hero-h3">
+              Przygotuj się na recenzje, inspiracje i wiele więcej!
             </Heading>
           </Fade>
         </StyledHeroContent>
