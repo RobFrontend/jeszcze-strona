@@ -13,6 +13,10 @@ const HeroButtonBox = styled.div`
   align-items: center;
   margin-top: 9.6rem;
   margin-bottom: 9.6rem;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
 `;
 
 function Home() {

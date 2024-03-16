@@ -81,21 +81,23 @@ function Contact() {
 
       <SectionKontakt>
         <Container>
-          <KontaktBox>
-            <IMGkontakt src="Kontakt.webp" alt="Monika" />
-            <KontaktTextBox>
-              <Heading as="h3">Monika Drzazgowska</Heading>
-              <Heading as="h3">jeszczestronaalbo100@gmail.com</Heading>
-              <Heading as="h3">
-                <KontaktLink
-                  to="https://www.instagram.com/jeszcze_strona_albo_sto/"
-                  target="_blank"
-                >
-                  jeszcze_strona_albo_sto
-                </KontaktLink>
-              </Heading>
-            </KontaktTextBox>
-          </KontaktBox>
+          <Fade delay={250} triggerOnce>
+            <KontaktBox>
+              <IMGkontakt src="Kontakt.webp" alt="Monika" />
+              <KontaktTextBox>
+                <Heading as="h3">Monika Drzazgowska</Heading>
+                <Heading as="h3">jeszczestronaalbo100@gmail.com</Heading>
+                <Heading as="h3">
+                  <KontaktLink
+                    to="https://www.instagram.com/jeszcze_strona_albo_sto/"
+                    target="_blank"
+                  >
+                    jeszcze_strona_albo_sto
+                  </KontaktLink>
+                </Heading>
+              </KontaktTextBox>
+            </KontaktBox>
+          </Fade>
         </Container>
       </SectionKontakt>
     </>

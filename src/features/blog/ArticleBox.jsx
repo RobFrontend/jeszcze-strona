@@ -87,13 +87,25 @@ const ArtLink = styled(Link)`
   }
 `;
 
-function ArticleBox() {
+function ArticleBox({ article }) {
+  const {
+    id: articleID,
+    created_at: dataPostu,
+    tytul,
+    wydawnictwo,
+    autor,
+    gatunek,
+    tekst,
+    linkig,
+    linklc,
+    img,
+  } = article;
   return (
     <Container>
       <Fade triggerOnce>
         <div
           style={{
-            background: `linear-gradient(to bottom right, rgb(242, 242, 241), rgba(242,242,241), rgba(242,242,241, 0.5)),  url("ImageArt.webp")`,
+            background: `linear-gradient(to bottom right, rgb(242, 242, 241), rgba(242,242,241), rgba(242,242,241, 0.5)),  url(${img})`,
             backgroundSize: `cover`,
             backgroundPosition: "center",
             backdropFilter: "blur(5px)",
@@ -105,65 +117,24 @@ function ArticleBox() {
         >
           <ArtBox>
             <TitleArt>
-              <Heading as="h3">Dziedzictwo Usherów</Heading>
+              <Heading as="h3">{tytul}</Heading>
             </TitleArt>
-            <DataArt>31-10-2023</DataArt>
+            <DataArt>{dataPostu.slice(0, 10)}</DataArt>
             <ArtContent>
-              <TextArt>
-                Jak nie chcecie sobie przerywać po 3 stronach to przeczytajcie
-                najpierw opowiadanie Poe. Nie jest niezbędne, ale nieznajomość
-                jego treści będzie Was niesamowicie uwierać. Ostatecznie to
-                opowiadanie staje się pełniejsze dzięki zabiegom fabularnym
-                książki. Skazywanie chłopaków na śmiertelnie niebezpieczne
-                przygody to chyba takie hobby McCammona. No dobra. Dla
-                wyrównania sił czasem daje im coś ekstra co może pomóc, albo
-                przeszkodzić. Temu da porozumiewanie się za pomocą myśli, ale
-                nadzieje go na szpony zwyrodniałej porywaczki. Innym bystry,
-                ciekawski umysł i zamknie w zaściankowej społeczności i losowym
-                wieku. Tym razem dał chłopakowi kij. O przepraszam xD Różdżkę. A
-                z kim ma konkurować? Z diabłem. O, w sumie, losy świata xD
-                sprawiedliwie co nie? Historia zaczyna się od zupełnie innego
-                chłopca który zgubił się kiedyś w „twierdzy”. Aktualnie jest już
-                dorosły i w lekkiej ruinie. Wydawca nie chce kupić jego nowej
-                książki, nieuleczalna choroba nieubłaganie się nasila, ukochana
-                nie żyje i wygląda na to że jego ojciec jest następny w kolejce.
-                Nie żeby Riksowi Usherowi było przykro z tego powodu, po prostu
-                przez to musi odwiedzić rodzinną posiadłość której szczerze
-                nienawidzi. Tymczasem od stu lat w miasteczku, nieopodal
-                Usherlandu pojawiają się dziwne postacie. Pantera chodząca na
-                dwóch łapach, wszystkowiedzący dziad z kosturem i postrach
-                dzieci - Dyniowaty. Ot, legendy. Tylko że ludzie widują z deczka
-                humanoidalnego, drapieżnego kota i po coś niosą dary dla dziada
-                alias Króla Gór. Do tego zaginął brat New, a chłopiec widział
-                kto go zabrał i nikt nie przekona go że mu się przywidziało. Z
-                bezczynnością lokalnej społeczności w sprawie zaginionych dzieci
-                - nikt nawet nie zgłasza ich zaginięcia - nie może się pogodzić
-                Raven, dziennikarka z miasta. Losy Riksa, New i Raven krzyżują
-                się w drodze do odkrycia tajemnic rodu Usherów i zaginionych
-                dzieci. Mamy tu mnogość perspektyw i czasów akcji. Nie jest
-                jednak jakoś szczególnie skomplikowana. Na początku jakoś
-                szalenie nie angażuje, ale po setce już robi się interesująco, a
-                po połowie nie można się oderwać.
-              </TextArt>
+              <TextArt>{tekst}</TextArt>
               <ImgBox>
-                <ImgArt src="ImageArt.webp" alt="image" />
+                <ImgArt src={img} alt="image" />
                 <TextGatunek>Gatunek:</TextGatunek>
-                <TextGatunek>Horror</TextGatunek>
+                <TextGatunek>{gatunek}</TextGatunek>
               </ImgBox>
             </ArtContent>
-            <Heading as="h4">Autor: Robert McCammon</Heading>
-            <Heading as="h4">Wydawnictwo: Vesper</Heading>
+            <Heading as="h4">Autor: {autor}</Heading>
+            <Heading as="h4">Wydawnictwo: {wydawnictwo}</Heading>
 
-            <ArtLink
-              to="https://www.instagram.com/p/CzFErbXtIVN/"
-              target="_blank"
-            >
+            <ArtLink to={linkig} target="_blank">
               Instagram
             </ArtLink>
-            <ArtLink
-              to="https://www.instagram.com/p/CzFErbXtIVN/"
-              target="_blank"
-            >
+            <ArtLink to={linklc} target="_blank">
               Lubimy Czytać
             </ArtLink>
           </ArtBox>
