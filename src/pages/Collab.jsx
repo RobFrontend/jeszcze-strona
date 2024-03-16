@@ -106,7 +106,7 @@ function Collab() {
           </Fade>
           <Fade delay={500} triggerOnce>
             <Heading as="h2" className="hero-h2">
-              Współpracuję z <UseTransition />i
+              Współpracuję z<br></br> <UseTransition />i
             </Heading>
           </Fade>
         </StyledHeroContent>
