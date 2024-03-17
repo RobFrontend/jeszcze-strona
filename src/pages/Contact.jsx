@@ -81,10 +81,7 @@ function Contact() {
           </Fade>
           <Fade delay={500} triggerOnce>
             <Heading as="h2" className="hero-h2">
-              Zapraszam do kontaktu
-            </Heading>
-            <Heading as="h2" className="hero-h2">
-              Twoje dzieła mają szansę zajaśnieć!
+              Zapraszam do kontaktu <br></br>Twoje dzieła mają szansę zajaśnieć!
             </Heading>
           </Fade>
         </StyledHeroContent>

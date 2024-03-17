@@ -8,6 +8,7 @@ const Heading = styled.h1`
       text-transform: capitalize;
       color: var(--font-dark-white);
       font-family: "Clicker Script", cursive;
+      margin-bottom: 2.4rem;
       @media screen and (max-width: 935px) {
         font-size: 8rem;
       }
@@ -30,7 +31,7 @@ const Heading = styled.h1`
     css`
       font-size: 5.2rem;
       color: var(--font-light-dark);
-
+      line-height: 1.2;
       @media screen and (max-width: 615px) {
         font-size: 4.2rem;
       }
@@ -47,6 +48,7 @@ const Heading = styled.h1`
       font-size: 3.2rem;
       color: var(--font-light-dark);
       letter-spacing: -1.5px;
+      line-height: 1.05;
       @media screen and (max-width: 430px) {
         font-size: 2.4rem;
       }

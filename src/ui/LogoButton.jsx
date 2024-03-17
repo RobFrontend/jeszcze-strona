@@ -6,7 +6,7 @@ const Logo = styled.button`
   font-size: 2.4rem;
   font-weight: 600;
   color: var(--font-medium-dark);
-  filter: drop-shadow(5px 5px 15px var(--font-verylight-dark));
+  filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.4));
   border: none;
   background-color: transparent;
   cursor: pointer;

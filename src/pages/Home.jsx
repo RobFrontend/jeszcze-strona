@@ -32,11 +32,10 @@ function Home() {
           </Fade>
           <Fade delay={500} triggerOnce>
             <Heading as="h2" className="hero-h2">
-              Lubię książki, a książki lubią mnie
+              Lubię książki, a książki lubią mnie <br></br>Recenzje z pasji do
+              literatury
             </Heading>
-            <Heading as="h2" className="hero-h2">
-              Recenzje z pasji do literatury
-            </Heading>
+
             <HeroButtonBox>
               <LinkButton variation="dark" to="/omnie">
                 O mnie
