@@ -9,6 +9,7 @@ const Heading = styled.h1`
       color: var(--font-dark-white);
       font-family: "Clicker Script", cursive;
       margin-bottom: 2.4rem;
+      padding: 0.4rem;
       @media screen and (max-width: 935px) {
         font-size: 8rem;
       }
