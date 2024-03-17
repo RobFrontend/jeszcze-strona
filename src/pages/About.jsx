@@ -43,6 +43,9 @@ const Grid2cols = styled.div`
   gap: 3.2rem;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const IMGomnie = styled.img`
@@ -57,6 +60,10 @@ const IMGomnie = styled.img`
   &:hover {
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25)) brightness(1)
       grayscale(0);
+  }
+  @media screen and (max-width: 768px) {
+    grid-row: 1;
+    max-height: 20rem;
   }
 `;
 
@@ -75,6 +82,41 @@ const CollabFlex = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+`;
+
+const GatunkiBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+`;
+
+const GatunkiContent = styled.div`
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  gap: 4.8rem;
+  padding: 1.8rem;
+`;
+
+const UL = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 1.6rem;
+  justify-self: end;
+`;
+
+const LI = styled.li`
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  padding: 0.2rem;
+`;
+
+const IMGtranGatunki = styled.img`
+  max-height: 30em;
+  width: min-content;
+  align-self: center;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.1)) brightness(0.95)
+    grayscale(0.1);
 `;
 
 function About() {
@@ -100,7 +142,7 @@ function About() {
       <SectionAbout>
         <Container>
           <AboutBoxes>
-            <Fade delay={250} triggerOnce direction="up">
+            <Fade delay={250} triggerOnce>
               <AboutBox>
                 <Heading
                   as="h2"
@@ -168,7 +210,7 @@ function About() {
                     literatury.
                   </Pabout>
                   <LinkButton
-                    variation="dark"
+                    variation="smallDark"
                     to="/wspolpraca"
                     onClick={onClickScroll}
                     style={{
@@ -189,39 +231,48 @@ function About() {
         <Container>
           <AboutBoxes>
             <AboutBox>
-              <Pabout>
-                Przekrój gatunków, który znajdziesz na moim profilu, to:
-              </Pabout>
-              <ul>
-                <li>Fantastyka</li>
-                <li>Science Fiction</li>
-                <li>Romans</li>
-                <li>Erotyk</li>
-                <li>Historyczne</li>
-                <li>Thriller</li>
-                <li>Kryminał</li>
-                <li>Klasyka</li>
-                <li>Dramat</li>
-                <li>Obyczajowy</li>
-                <li>Horror</li>
-                <li>Young Adult</li>
-              </ul>
-              <Pabout>
-                Zapraszam Cię do świata książek, gdzie każda strona to nowa
-                przygoda!
-              </Pabout>
-              <LinkButton
-                variation="light"
-                to="/blog"
-                onClick={onClickScroll}
-                style={{
-                  width: "min-content",
-                  alignSelf: "center",
-                  marginTop: "1.8rem",
-                }}
-              >
-                Blog
-              </LinkButton>
+              <Fade triggerOnce direction="right">
+                <GatunkiBox>
+                  <Heading as="h4" style={{ textAlign: "center" }}>
+                    Przekrój gatunków, który znajdziesz na moim profilu, to:
+                  </Heading>
+                  <GatunkiContent>
+                    <UL>
+                      <LI>Fantastyka</LI>
+                      <LI>Science Fiction</LI>
+                      <LI>Romans</LI>
+                      <LI>Erotyk</LI>
+                      <LI>Historyczne</LI>
+                      <LI>Thriller</LI>
+                      <LI>Kryminał</LI>
+                      <LI>Klasyka</LI>
+                      <LI>Dramat</LI>
+                      <LI>Obyczajowy</LI>
+                      <LI>Horror</LI>
+                      <LI>Young Adult</LI>
+                    </UL>
+                    <Fade delay={500} triggerOnce>
+                      <IMGtranGatunki src="TranGatunki.webp" alt="photo tran" />
+                    </Fade>
+                  </GatunkiContent>
+                  <Heading as="h4" style={{ textAlign: "center" }}>
+                    Zapraszam Cię do świata książek, gdzie każda strona to nowa
+                    przygoda!
+                  </Heading>
+                  <LinkButton
+                    variation="smallLight"
+                    to="/blog"
+                    onClick={onClickScroll}
+                    style={{
+                      width: "min-content",
+                      alignSelf: "center",
+                      marginTop: "1.8rem",
+                    }}
+                  >
+                    Blog
+                  </LinkButton>
+                </GatunkiBox>
+              </Fade>
             </AboutBox>
           </AboutBoxes>
         </Container>

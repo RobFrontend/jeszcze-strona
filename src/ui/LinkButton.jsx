@@ -5,10 +5,22 @@ const varations = {
   dark: css`
     background-color: var(--font-dark-dark);
     color: var(--font-medium-white);
+    filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
   `,
   light: css`
     background-color: var(--font-medium-white);
     color: var(--font-dark-dark);
+    filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
+  `,
+  smallDark: css`
+    background-color: var(--font-dark-dark);
+    color: var(--font-medium-white);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.2));
+  `,
+  smallLight: css`
+    background-color: var(--font-medium-white);
+    color: var(--font-dark-dark);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.2));
   `,
 };
 
@@ -17,7 +29,7 @@ const LinkButton = styled(NavLink)`
   text-transform: uppercase;
   font-size: 2.4rem;
   letter-spacing: 1px;
-  filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
+
   border-radius: var(--border-radius-lg);
   font-weight: 600;
   &:hover {
