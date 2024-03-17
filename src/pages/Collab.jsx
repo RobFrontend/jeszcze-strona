@@ -15,7 +15,7 @@ const LogoIMG = styled.img`
   max-height: 10rem;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.1)) grayscale(0.5)
     brightness(0.8);
-  padding: 1.2rem;
+  padding: 0.8rem;
 
   @media (max-width: 50em) {
     max-height: 7rem;
