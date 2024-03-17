@@ -68,13 +68,37 @@ function BloxBoxes() {
       articles.sort((a, b) => a.created_at.localeCompare(b.created_at));
     //gatunek
     if (gatunekSort === "Romans")
-      articles = articles.filter((article) => article.gatunek === "Romans");
+      articles = articles.filter((article) =>
+        article.gatunek.includes("Romans")
+      );
     if (gatunekSort === "Horror")
-      articles = articles.filter((article) => article.gatunek === "Horror");
+      articles = articles.filter((article) =>
+        article.gatunek.includes("Horror")
+      );
     if (gatunekSort === "Thriller")
-      articles = articles.filter((article) => article.gatunek === "Thriller");
+      articles = articles.filter((article) =>
+        article.gatunek.includes("Thriller")
+      );
     if (gatunekSort === "Fantasy")
-      articles = articles.filter((article) => article.gatunek === "Fantasy");
+      articles = articles.filter((article) =>
+        article.gatunek.includes("Fantasy")
+      );
+    if (gatunekSort === "Sci-Fi")
+      articles = articles.filter((article) =>
+        article.gatunek.includes("Sci-Fi")
+      );
+    if (gatunekSort === "Erotyk")
+      articles = articles.filter((article) =>
+        article.gatunek.includes("Erotyk")
+      );
+    if (gatunekSort === "Kryminał")
+      articles = articles.filter((article) =>
+        article.gatunek.includes("Kryminał")
+      );
+    if (gatunekSort === "YoungAdult")
+      articles = articles.filter((article) =>
+        article.gatunek.includes("YoungAdult")
+      );
   }
   // search autor
   const [searchAutor, setSearchAutor] = useState("");
