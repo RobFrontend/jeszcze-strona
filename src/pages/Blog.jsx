@@ -5,8 +5,12 @@ import StyledHeroContent from "../ui/StyledHeroContent";
 import Heading from "../ui/Heading";
 import Features from "../ui/Features";
 import BloxBoxes from "../features/blog/BloxBoxes";
+import { useArticles } from "../features/blog/useArticles";
+import LoaderFull from "../ui/LoaderFull";
 
 function Blog() {
+  let { isLoading } = useArticles();
+  if (isLoading) return <LoaderFull />;
   return (
     <>
       <Hero>
