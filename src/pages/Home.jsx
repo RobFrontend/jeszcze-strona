@@ -6,6 +6,7 @@ import { Fade } from "react-awesome-reveal";
 import LinkButton from "../ui/LinkButton";
 import Features from "../ui/Features";
 import StyledHeroContent from "../ui/StyledHeroContent";
+import { onClickScroll } from "../ui/HandleScrollTop";
 
 const HeroButtonBox = styled.div`
   display: flex;
@@ -37,10 +38,14 @@ function Home() {
             </Heading>
 
             <HeroButtonBox>
-              <LinkButton variation="dark" to="/omnie">
+              <LinkButton variation="dark" to="/omnie" onClick={onClickScroll}>
                 O mnie
               </LinkButton>
-              <LinkButton variation="light" to="/wspolpraca">
+              <LinkButton
+                variation="light"
+                to="/wspolpraca"
+                onClick={onClickScroll}
+              >
                 Współpraca
               </LinkButton>
             </HeroButtonBox>

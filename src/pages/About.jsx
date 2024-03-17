@@ -191,6 +191,7 @@ function About() {
                     as="h3"
                     style={{
                       marginBottom: "1.2rem",
+                      marginTop: "1.8rem",
                     }}
                   >
                     Jestem otwarta na współpracę
