@@ -21,10 +21,10 @@ const Heading = styled.h1`
         font-size: 6.2rem;
       }
       @media screen and (max-width: 430px) {
-        font-size: 5.2rem;
+        font-size: 4.8rem;
       }
       @media screen and (max-width: 350px) {
-        font-size: 4.2rem;
+        font-size: 3.8rem;
       }
     `}
   ${(props) =>
