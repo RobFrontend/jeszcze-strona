@@ -1,5 +1,5 @@
-import { Fade, Hinge, Roll } from "react-awesome-reveal";
-import BackDropBlur from "../ui/BackDropBlur";
+import { Fade, Hinge } from "react-awesome-reveal";
+
 import Hero from "../ui/Hero";
 import StyledHeroContent from "../ui/StyledHeroContent";
 import Heading from "../ui/Heading";
@@ -11,7 +11,6 @@ function PageNotFound() {
     <>
       <Header />
       <Hero>
-        {/* <BackDropBlur> */}
         <StyledHeroContent>
           <Fade direction="down">
             <Hinge triggerOnce>
@@ -30,7 +29,6 @@ function PageNotFound() {
             </Heading>
           </Fade>
         </StyledHeroContent>
-        {/* </BackDropBlur> */}
       </Hero>
       <Features />
     </>

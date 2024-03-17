@@ -60,6 +60,7 @@ function BloxBoxes() {
   // sort
   const [dataSort, setDataSort] = useState("Najnowsze");
   const [gatunekSort, setGatunekSort] = useState("Wszystkie");
+
   if (articles) {
     // data
     if (dataSort === "Najnowsze")
@@ -67,39 +68,13 @@ function BloxBoxes() {
     if (dataSort === "Najstarsze")
       articles.sort((a, b) => a.created_at.localeCompare(b.created_at));
     //gatunek
-    if (gatunekSort === "Romans")
+    if (gatunekSort !== "Wszystkie") {
       articles = articles.filter((article) =>
-        article.gatunek.includes("Romans")
+        article.gatunek.includes(gatunekSort)
       );
-    if (gatunekSort === "Horror")
-      articles = articles.filter((article) =>
-        article.gatunek.includes("Horror")
-      );
-    if (gatunekSort === "Thriller")
-      articles = articles.filter((article) =>
-        article.gatunek.includes("Thriller")
-      );
-    if (gatunekSort === "Fantasy")
-      articles = articles.filter((article) =>
-        article.gatunek.includes("Fantasy")
-      );
-    if (gatunekSort === "Sci-Fi")
-      articles = articles.filter((article) =>
-        article.gatunek.includes("Sci-Fi")
-      );
-    if (gatunekSort === "Erotyk")
-      articles = articles.filter((article) =>
-        article.gatunek.includes("Erotyk")
-      );
-    if (gatunekSort === "Kryminał")
-      articles = articles.filter((article) =>
-        article.gatunek.includes("Kryminał")
-      );
-    if (gatunekSort === "YoungAdult")
-      articles = articles.filter((article) =>
-        article.gatunek.includes("YoungAdult")
-      );
+    }
   }
+
   // search autor
   const [searchAutor, setSearchAutor] = useState("");
   function findAutor(e) {
@@ -203,7 +178,7 @@ function BloxBoxes() {
       {articles
         .map((article) => <ArticleBox article={article} key={article.id} />)
         .slice(0, more)}
-      {more === articles.length ? null : (
+      {more >= articles.length ? null : (
         <BTNmoreBox>
           <BTNmore onClick={() => setMore((more) => more + 1)}>
             Więcej...

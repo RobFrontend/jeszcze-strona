@@ -1,10 +1,9 @@
-import { Fade, Zoom } from "react-awesome-reveal";
-import BackDropBlur from "../ui/BackDropBlur";
+import { Fade } from "react-awesome-reveal";
+
 import Hero from "../ui/Hero";
 import StyledHeroContent from "../ui/StyledHeroContent";
 import Heading from "../ui/Heading";
-import { useEffect, useState } from "react";
-import TextTransition, { presets } from "react-text-transition";
+
 import UseTransition from "../features/collab/useTransition";
 import Features from "../ui/Features";
 import Container from "../ui/Container";
@@ -98,7 +97,6 @@ function Collab() {
   return (
     <>
       <Hero>
-        {/* <BackDropBlur> */}
         <StyledHeroContent>
           <Fade direction="down">
             <Heading as="h1" className="hero-h1">
@@ -111,7 +109,6 @@ function Collab() {
             </Heading>
           </Fade>
         </StyledHeroContent>
-        {/* </BackDropBlur> */}
       </Hero>
       <Features />
       <Fade triggerOnce>
