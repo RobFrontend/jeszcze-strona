@@ -5,22 +5,22 @@ const varations = {
   dark: css`
     background-color: var(--font-dark-dark);
     color: var(--font-medium-white);
-    filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.4));
   `,
   light: css`
     background-color: var(--font-medium-white);
     color: var(--font-dark-dark);
-    filter: drop-shadow(5px 5px 15px var(--font-dark-dark));
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.4));
   `,
   smallDark: css`
     background-color: var(--font-dark-dark);
     color: var(--font-medium-white);
-    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.15));
   `,
   smallLight: css`
     background-color: var(--font-medium-white);
     color: var(--font-dark-dark);
-    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.15));
   `,
 };
 

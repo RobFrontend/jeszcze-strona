@@ -10,9 +10,8 @@ import { onClickScroll } from "../ui/HandleScrollTop";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import UseTransitionHome from "../features/home/UseTransitionHome";
-import UseTransitionHome2 from "../features/home/UseTransitionHome2";
-import UseTransitionHome3 from "../features/home/UseTransitionHome3";
+
+import Container from "../ui/Container";
 
 const responsive = {
   desktop: {
@@ -43,10 +42,63 @@ const HeroButtonBox = styled.div`
     gap: 4.8rem;
   }
 `;
-
-const SectionGatunki = styled.section`
+// Triple ///////////////////////////////////////////
+const SectionTriple = styled.section`
   background: linear-gradient(
     to top,
+    var(--font-dark-white),
+    var(--font-light-white)
+  );
+  background-size: 150%;
+  background-position: center;
+  background-size: cover;
+`;
+
+const TripleBoxes = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 6.4rem;
+  gap: 3.2rem;
+  @media screen and (max-width: 530px) {
+    grid-template-columns: 1fr;
+  }
+`;
+const TripleTextBox = styled.div`
+  display: grid;
+  gap: 3.2rem;
+  text-align: center;
+  align-items: center;
+`;
+
+const PHome = styled.p`
+  font-size: 1.8rem;
+  line-height: 1.5;
+`;
+
+const TripleButtonBox = styled.div``;
+
+const IMGtripleBox = styled.div`
+  overflow: hidden;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
+  @media screen and (max-width: 530px) {
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+  }
+`;
+const IMGtriple = styled.img`
+  transition: all 3s;
+  &:hover {
+    transform: scale(1.03);
+  }
+  @media screen and (max-width: 530px) {
+    max-height: 30rem;
+  }
+`;
+// GATUNKI //////////////////////////////////
+const SectionGatunki = styled.section`
+  background: linear-gradient(
+    to bottom,
     var(--font-dark-white),
     var(--font-light-white)
   );
@@ -95,6 +147,17 @@ const ButtonBox = styled.div`
   text-align: center;
 `;
 
+const SectionKontakt = styled.section`
+  background: linear-gradient(
+    to top,
+    var(--font-dark-white),
+    var(--font-light-white)
+  );
+  background-size: 150%;
+  background-position: center;
+  background-size: cover;
+`;
+
 function Home() {
   return (
     <>
@@ -127,6 +190,43 @@ function Home() {
         </StyledHeroContent>
       </Hero>
       <Features />
+      {/* TRIPLE SECTION */}
+      <SectionTriple>
+        <Container>
+          <Fade triggerOnce>
+            <Heading as="h2" style={{ marginTop: "3.2rem" }}>
+              Recenzje z JeszczeStronaAlboSto
+            </Heading>
+            <TripleBoxes>
+              <TripleTextBox>
+                <PHome>
+                  Zanurz się w świat moich recenzji na JeszczeStronaAlboSto!
+                  <br></br>
+                  Odkryj barwne opowieści, które kocham dzielić się z
+                  czytelnikami.<br></br> Kliknij poniżej, aby poznać mnie
+                  lepiej.
+                </PHome>
+
+                <TripleButtonBox>
+                  <LinkButton
+                    variation="smallLight"
+                    onClick={onClickScroll}
+                    to="/omnie"
+                  >
+                    O mnie
+                  </LinkButton>
+                </TripleButtonBox>
+              </TripleTextBox>
+              <Fade triggerOnce>
+                <IMGtripleBox>
+                  <IMGtriple src="HomeTriple.webp" alt="triple" />
+                </IMGtripleBox>
+              </Fade>
+            </TripleBoxes>
+          </Fade>
+        </Container>
+      </SectionTriple>
+      {/* GATUNKI SECTION */}
       <SectionGatunki>
         <Heading
           as="h2"
@@ -212,6 +312,11 @@ function Home() {
           </ButtonBox>
         </Fade>
       </SectionGatunki>
+      <SectionKontakt>
+        <Container>
+          <Heading as="h2">Zapraszam do kontaktu oraz wpsółpracy</Heading>
+        </Container>
+      </SectionKontakt>
     </>
   );
 }
