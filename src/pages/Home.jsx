@@ -8,6 +8,30 @@ import Features from "../ui/Features";
 import StyledHeroContent from "../ui/StyledHeroContent";
 import { onClickScroll } from "../ui/HandleScrollTop";
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import UseTransitionHome from "../features/home/UseTransitionHome";
+import UseTransitionHome2 from "../features/home/UseTransitionHome2";
+import UseTransitionHome3 from "../features/home/UseTransitionHome3";
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 2, // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+};
+
 const HeroButtonBox = styled.div`
   display: flex;
   justify-content: space-between;
@@ -18,6 +42,57 @@ const HeroButtonBox = styled.div`
     flex-direction: column;
     gap: 4.8rem;
   }
+`;
+
+const SectionGatunki = styled.section`
+  background: linear-gradient(
+    to top,
+    var(--font-dark-white),
+    var(--font-light-white)
+  );
+  background-size: 150%;
+  background-position: center;
+  background-size: cover;
+`;
+const GatunkiBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 0 auto;
+  justify-content: center;
+  justify-items: center;
+  @media screen and (max-width: 930px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+`;
+const HeadingGatunki = styled.h3`
+  font-size: 2.4rem;
+  color: var(--font-light-dark);
+  opacity: 0.2;
+  padding: 0 1.8rem;
+  @media screen and (max-width: 930px) {
+    font-size: 1.8rem;
+  }
+  @media screen and (max-width: 380px) {
+    font-size: 1.4rem;
+  }
+`;
+
+const IMGgatunek = styled.img`
+  width: 100%;
+  opacity: 0.8;
+  filter: brightness(0.9) grayscale(0.1);
+  padding: 1.8rem;
+  transition: all 1s;
+  &:hover {
+    transform: scale(1.03);
+  }
+`;
+
+const ButtonBox = styled.div`
+  display: grid;
+  justify-content: center;
+  padding: 3.2rem;
+  text-align: center;
 `;
 
 function Home() {
@@ -52,6 +127,91 @@ function Home() {
         </StyledHeroContent>
       </Hero>
       <Features />
+      <SectionGatunki>
+        <Heading
+          as="h2"
+          style={{
+            textAlign: "center",
+            marginBottom: " 4.8rem",
+            marginTop: "2.4rem",
+          }}
+        >
+          Różnorodność gatunkowa
+        </Heading>
+        <Fade delay={250} triggerOnce>
+          <Carousel
+            responsive={responsive}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={4000}
+            keyBoardControl={true}
+            customTransition="all .5s"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+          >
+            <div>
+              <IMGgatunek src="GatunekDramat.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekErotyk.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekFantasy.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekHistoryczny.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekHorror.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekKlasyka.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekKryminal.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekObyczajowy.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekRomans.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekSciFi.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekThriller.webp" alt="gatunek" />
+            </div>
+            <div>
+              <IMGgatunek src="GatunekYoungAdult.webp" alt="gatunek" />
+            </div>
+          </Carousel>
+          <GatunkiBox>
+            <HeadingGatunki>Dramat</HeadingGatunki>
+            <HeadingGatunki>Erotyk</HeadingGatunki>
+            <HeadingGatunki>Fantasy</HeadingGatunki>
+            <HeadingGatunki>Historyczny</HeadingGatunki>
+            <HeadingGatunki>Horror</HeadingGatunki>
+            <HeadingGatunki>Klasyka</HeadingGatunki>
+            <HeadingGatunki>Kryminał</HeadingGatunki>
+            <HeadingGatunki>Obyczajowy</HeadingGatunki>
+            <HeadingGatunki>Romans</HeadingGatunki>
+            <HeadingGatunki>Sci-Fi</HeadingGatunki>
+            <HeadingGatunki>Thriller</HeadingGatunki>
+            <HeadingGatunki>YoungAdult</HeadingGatunki>
+          </GatunkiBox>
+          <ButtonBox>
+            <LinkButton
+              variation="smallLight"
+              onClick={onClickScroll}
+              to="/blog"
+            >
+              Sprawdź Blog
+            </LinkButton>
+          </ButtonBox>
+        </Fade>
+      </SectionGatunki>
     </>
   );
 }
