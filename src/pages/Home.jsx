@@ -358,39 +358,41 @@ function Home() {
       {/* Kontakt */}
       <SectionKontakt>
         <Container>
-          <Heading as="h2">Zapraszam do kontaktu oraz wpsółpracy</Heading>
-          <KontaktBoxes>
-            <KontaktTextBox>
-              <div>
-                <Heading as="h4" style={{ marginBottom: "1.8rem" }}>
-                  Chcesz się skontaktować ze mną lub zacząć współpracę?
-                </Heading>
-                <PHome>
-                  Jeśli masz wizję współpracy lub chcesz porozmawiać o
-                  możliwościach, zapraszam do odwiedzenia sekcji 'Kontakt' oraz
-                  'Współpraca'. Razem możemy stworzyć coś wyjątkowego dla
-                  miłośników literatury. Czekam na Twój kontakt!
-                </PHome>
-              </div>
-              <KontaktButtonBox>
-                <LinkButton
-                  variation="smallLight"
-                  onClick={onClickScroll}
-                  to="/wspolpraca"
-                >
-                  Współpraca
-                </LinkButton>
-                <LinkButton
-                  variation="smallDark"
-                  onClick={onClickScroll}
-                  to="/wspolpraca"
-                >
-                  Kontakt
-                </LinkButton>
-              </KontaktButtonBox>
-            </KontaktTextBox>
-            <IMGkontakt src="hand.webp" alt="dłoń" />
-          </KontaktBoxes>
+          <Fade triggerOnce>
+            <Heading as="h2">Zapraszam do kontaktu oraz wpsółpracy</Heading>
+            <KontaktBoxes>
+              <KontaktTextBox>
+                <div>
+                  <Heading as="h4" style={{ marginBottom: "1.8rem" }}>
+                    Chcesz się skontaktować ze mną lub zacząć współpracę?
+                  </Heading>
+                  <PHome>
+                    Jeśli masz wizję współpracy lub chcesz porozmawiać o
+                    możliwościach, zapraszam do odwiedzenia sekcji 'Kontakt'
+                    oraz 'Współpraca'. Razem możemy stworzyć coś wyjątkowego dla
+                    miłośników literatury. Czekam na Twój kontakt!
+                  </PHome>
+                </div>
+                <KontaktButtonBox>
+                  <LinkButton
+                    variation="smallLight"
+                    onClick={onClickScroll}
+                    to="/wspolpraca"
+                  >
+                    Współpraca
+                  </LinkButton>
+                  <LinkButton
+                    variation="smallDark"
+                    onClick={onClickScroll}
+                    to="/wspolpraca"
+                  >
+                    Kontakt
+                  </LinkButton>
+                </KontaktButtonBox>
+              </KontaktTextBox>
+              <IMGkontakt src="hand.webp" alt="dłoń" />
+            </KontaktBoxes>
+          </Fade>
         </Container>
       </SectionKontakt>
     </>
