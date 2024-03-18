@@ -61,6 +61,8 @@ const TripleBoxes = styled.div`
   gap: 3.2rem;
   @media screen and (max-width: 530px) {
     grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
   }
 `;
 const TripleTextBox = styled.div`
@@ -68,6 +70,9 @@ const TripleTextBox = styled.div`
   gap: 3.2rem;
   text-align: center;
   align-items: center;
+  @media screen and (max-width: 530px) {
+    grid-row: 2;
+  }
 `;
 
 const PHome = styled.p`
@@ -75,7 +80,9 @@ const PHome = styled.p`
   line-height: 1.5;
 `;
 
-const TripleButtonBox = styled.div``;
+const TripleButtonBox = styled.div`
+  padding-top: 1.8rem;
+`;
 
 const IMGtripleBox = styled.div`
   overflow: hidden;
