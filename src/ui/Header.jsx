@@ -23,6 +23,7 @@ const StyledHeader = styled.header`
   );
   background-size: 200%;
   background-position: center;
+  z-index: 5;
 `;
 
 const NavLogo = styled.nav`
@@ -63,6 +64,7 @@ const Menu = styled.button`
   background: none;
   cursor: pointer;
   font-size: 1.8rem;
+  z-index: 5;
   @media screen and (min-width: 935px) {
     display: none;
   }

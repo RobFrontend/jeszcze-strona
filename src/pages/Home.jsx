@@ -88,6 +88,7 @@ const IMGtripleBox = styled.div`
 `;
 const IMGtriple = styled.img`
   transition: all 3s;
+  transform: scale(1.001);
   &:hover {
     transform: scale(1.03);
   }
@@ -143,7 +144,8 @@ const IMGgatunek = styled.img`
 const ButtonBox = styled.div`
   display: grid;
   justify-content: center;
-  padding: 3.2rem;
+  padding-top: 3.2rem;
+  padding-bottom: 1.8rem;
   text-align: center;
 `;
 
@@ -153,9 +155,50 @@ const SectionKontakt = styled.section`
     var(--font-dark-white),
     var(--font-light-white)
   );
-  background-size: 150%;
   background-position: center;
   background-size: cover;
+`;
+
+const KontaktBoxes = styled.div`
+  padding: 4.8rem 1.8rem;
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: 3.2rem;
+  @media screen and (max-width: 980px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const KontaktTextBox = styled.div`
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+
+const KontaktButtonBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+  padding: 3.2rem;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    width: min-content;
+    justify-self: center;
+  }
+`;
+
+const IMGkontakt = styled.img`
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.15));
+
+  justify-self: center;
+  @media screen and (max-width: 980px) {
+    max-height: 30rem;
+    grid-row: 1;
+  }
+  @media screen and (max-width: 500px) {
+    max-height: 20rem;
+  }
 `;
 
 function Home() {
@@ -312,9 +355,42 @@ function Home() {
           </ButtonBox>
         </Fade>
       </SectionGatunki>
+      {/* Kontakt */}
       <SectionKontakt>
         <Container>
           <Heading as="h2">Zapraszam do kontaktu oraz wpsółpracy</Heading>
+          <KontaktBoxes>
+            <KontaktTextBox>
+              <div>
+                <Heading as="h4" style={{ marginBottom: "1.8rem" }}>
+                  Chcesz się skontaktować ze mną lub zacząć współpracę?
+                </Heading>
+                <PHome>
+                  Jeśli masz wizję współpracy lub chcesz porozmawiać o
+                  możliwościach, zapraszam do odwiedzenia sekcji 'Kontakt' oraz
+                  'Współpraca'. Razem możemy stworzyć coś wyjątkowego dla
+                  miłośników literatury. Czekam na Twój kontakt!
+                </PHome>
+              </div>
+              <KontaktButtonBox>
+                <LinkButton
+                  variation="smallLight"
+                  onClick={onClickScroll}
+                  to="/wspolpraca"
+                >
+                  Współpraca
+                </LinkButton>
+                <LinkButton
+                  variation="smallDark"
+                  onClick={onClickScroll}
+                  to="/wspolpraca"
+                >
+                  Kontakt
+                </LinkButton>
+              </KontaktButtonBox>
+            </KontaktTextBox>
+            <IMGkontakt src="hand.webp" alt="dłoń" />
+          </KontaktBoxes>
         </Container>
       </SectionKontakt>
     </>
