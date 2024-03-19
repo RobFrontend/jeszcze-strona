@@ -156,8 +156,8 @@ function About() {
                     </Heading>
                     <Pabout>
                       Na moim kawałku internetu znajdziesz skupisko mojej
-                      miłości do książek, pisanej w formie szczerych recenzji.Od
-                      lat wiernie oddaję się pasji czytania i eksploracji
+                      miłości do książek, pisanej w formie szczerych recenzji.
+                      Od lat wiernie oddaję się pasji czytania i eksploracji
                       literackiego świata. Moje recenzje są jak rozmowy z
                       najlepszymi przyjaciółmi- luźne, autentyczne i pełne
                       emocji.

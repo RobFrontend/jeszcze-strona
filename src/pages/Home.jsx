@@ -250,9 +250,9 @@ function Home() {
             <TripleBoxes>
               <TripleTextBox>
                 <PHome>
-                  Zanurz się w świat moich recenzji na JeszczeStronaAlboSto!
+                  Zanurz się w świat moich recenzji na Jeszcze Strona Albo Sto!
                   <br></br>
-                  Odkryj barwne opowieści, które kocham dzielić się z
+                  Odkryj barwne opowieści, którymi kocham dzielić się z
                   czytelnikami.<br></br> Kliknij poniżej, aby poznać mnie
                   lepiej.
                 </PHome>
@@ -366,7 +366,7 @@ function Home() {
       <SectionKontakt>
         <Container>
           <Fade triggerOnce>
-            <Heading as="h2">Zapraszam do kontaktu oraz wpsółpracy</Heading>
+            <Heading as="h2">Zapraszam do kontaktu oraz współpracy</Heading>
             <KontaktBoxes>
               <KontaktTextBox>
                 <div>
