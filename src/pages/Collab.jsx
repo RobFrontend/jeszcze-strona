@@ -134,7 +134,7 @@ function Collab() {
                     Instagramie{" "}
                   </KontaktLink>
                   lub napisz bezpośrednio na mój adres email:
-                  jeszczestronaalbo100@gmail.com - czekam na inspirujące
+                  kontakt@jeszczestronaalbosto.pl - czekam na inspirujące
                   projekty. <br></br>Razem możemy stworzyć coś wyjątkowego dla
                   miłośników literatury!
                 </Pkontakt>

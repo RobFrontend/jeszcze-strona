@@ -101,7 +101,7 @@ function Contact() {
               <KontaktTextBox>
                 <KontaktHeadings>
                   <Heading as="h3">Monika Drzazgowska</Heading>
-                  <Heading as="h3">jeszczestronaalbo100@gmail.com</Heading>
+                  <Heading as="h3">kontakt@jeszczestronaalbosto.pl</Heading>
                   <Heading as="h3">
                     <KontaktLink
                       to="https://www.instagram.com/jeszcze_strona_albo_sto/"

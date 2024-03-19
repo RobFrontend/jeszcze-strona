@@ -107,7 +107,7 @@ function Footer() {
                 </Pmenu>
               </div>
               <div>
-                <Pmenu>E-mail: jeszczestronaalbo100@gmail.com</Pmenu>
+                <Pmenu>E-mail: kontakt@jeszczestronaalbosto.pl</Pmenu>
                 <Pmenu>
                   Instagram:{" "}
                   <StyledFooterLink
