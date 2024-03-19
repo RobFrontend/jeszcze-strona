@@ -20,6 +20,13 @@ const Form = styled.form`
   background-position: center;
   background-size: cover;
   margin-bottom: 2.4rem;
+  @media screen and (max-width: 650px) {
+    min-width: 40rem;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 2.4rem;
+    min-width: 30rem;
+  }
 `;
 
 const FormBox = styled.div`
@@ -34,7 +41,14 @@ const InputBox = styled.div`
 `;
 
 const Textarea = styled.textarea`
-  height: 20rem;
+  min-height: 20rem;
+  max-width: 50rem;
+  @media screen and (max-width: 650px) {
+    max-width: 40rem;
+  }
+  @media screen and (max-width: 500px) {
+    max-width: 30rem;
+  }
 `;
 
 const Submit = styled.button`
