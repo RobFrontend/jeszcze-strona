@@ -144,7 +144,9 @@ function Contact() {
       </SectionKontakt>
       <SectionForm>
         <Container>
-          <ContactForm />
+          <Fade triggerOnce>
+            <ContactForm />
+          </Fade>
         </Container>
       </SectionForm>
     </>

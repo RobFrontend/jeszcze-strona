@@ -87,13 +87,13 @@ font-size: 1.6rem;
 margin-right: 0.8rem;
 letter-spacing: -0.5px;
 }
-
+textarea,
 input,
 select{
   padding: 0.3rem 0.6rem;
   border-radius: var(--border-radius-md);
 }
-
+textarea:focus,
 input:focus{
   outline: none;
   border: none;

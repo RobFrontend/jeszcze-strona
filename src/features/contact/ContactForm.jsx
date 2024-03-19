@@ -1,11 +1,25 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import styled from "styled-components";
+import Heading from "../../ui/Heading";
+import { Fade } from "react-awesome-reveal";
 
 const Form = styled.form`
   display: grid;
-  width: 40rem;
+  min-width: 50rem;
   gap: 2.4rem;
+  padding: 4.8rem;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+  background: linear-gradient(
+    to bottom right,
+    var(--font-dark-white),
+    var(--font-light-white)
+  );
+  background-size: 150%;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 2.4rem;
 `;
 
 const FormBox = styled.div`
@@ -17,6 +31,26 @@ const FormBox = styled.div`
 const InputBox = styled.div`
   display: grid;
   gap: 1.2rem;
+`;
+
+const Textarea = styled.textarea`
+  height: 20rem;
+`;
+
+const Submit = styled.button`
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 1.2rem 2.4rem;
+  width: min-content;
+  border: none;
+  color: var(--font-dark-white);
+  background-color: var(--font-light-dark);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+  justify-self: center;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 function ContactForm() {
@@ -49,30 +83,44 @@ function ContactForm() {
   };
 
   return (
-    <FormBox>
-      <Form onSubmit={onSubmit}>
-        <InputBox>
-          <label>Twój e-mail:</label>
-          <input type="email" name="email" required />
-        </InputBox>
-        <InputBox>
-          <label>Temat:</label>
-          <input type="text" name="name" required />
-        </InputBox>
-        <InputBox>
-          <label>Wiadomość:</label>
-          <textarea name="message" required></textarea>
-        </InputBox>
+    <>
+      <Heading as="h2" style={{ marginBottom: "4.8rem" }}>
+        Formularz kontaktowy
+      </Heading>
+      <Fade triggerOnce delay={250}>
+        <FormBox>
+          <Form onSubmit={onSubmit}>
+            <Heading
+              as="h3"
+              style={{ textAlign: "center", marginBottom: "1.2rem" }}
+            >
+              Napisz śmiało!
+            </Heading>
+            <InputBox>
+              <label>Twój e-mail:</label>
+              <input type="email" name="email" required />
+            </InputBox>
+            <InputBox>
+              <label>Temat:</label>
+              <input type="text" name="name" required />
+            </InputBox>
+            <InputBox>
+              <label>Wiadomość:</label>
+              <Textarea name="message" required></Textarea>
+            </InputBox>
 
-        <button type="submit">Wyślij</button>
-        <input
-          type="hidden"
-          name="access_key"
-          value="690d259b-e2ba-40fd-be5d-eaf0da0e6356"
-        ></input>
-      </Form>
-      <span>{result}</span>
-    </FormBox>
+            <Submit type="submit">Wyślij</Submit>
+
+            <input
+              type="hidden"
+              name="access_key"
+              value="690d259b-e2ba-40fd-be5d-eaf0da0e6356"
+            ></input>
+          </Form>
+          <span>{result}</span>
+        </FormBox>
+      </Fade>
+    </>
   );
 }
 
