@@ -7,6 +7,7 @@ import Features from "../ui/Features";
 import styled from "styled-components";
 import Container from "../ui/Container";
 import { Link } from "react-router-dom";
+import ContactForm from "../features/contact/ContactForm";
 
 const SectionKontakt = styled.section`
   background: linear-gradient(
@@ -66,6 +67,18 @@ const Pkontakt = styled.p`
   line-height: 1.5;
   align-self: end;
   text-align: justify;
+`;
+
+const SectionForm = styled.section`
+  background: linear-gradient(
+    to bottom right,
+    var(--font-dark-white),
+    var(--font-light-white)
+  );
+  background-size: 150%;
+  background-position: center;
+  background-size: cover;
+  background-position: top;
 `;
 
 function Contact() {
@@ -129,6 +142,11 @@ function Contact() {
           </Fade>
         </Container>
       </SectionKontakt>
+      <SectionForm>
+        <Container>
+          <ContactForm />
+        </Container>
+      </SectionForm>
     </>
   );
 }
