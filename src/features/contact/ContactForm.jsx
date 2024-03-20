@@ -115,8 +115,12 @@ function ContactForm() {
               <input type="email" name="email" required />
             </InputBox>
             <InputBox>
-              <label>Temat:</label>
+              <label>Imię/Nazwa</label>
               <input type="text" name="name" required />
+            </InputBox>
+            <InputBox>
+              <label>Temat:</label>
+              <input type="text" name="subject" required />
             </InputBox>
             <InputBox>
               <label>Wiadomość:</label>
