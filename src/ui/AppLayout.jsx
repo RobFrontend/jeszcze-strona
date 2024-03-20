@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import styled from "styled-components";
 import Headroom from "react-headroom";
+import CookiesAlert from "./CookiesAlert";
 
 const Main = styled.main`
   overflow: hidden;
@@ -16,6 +17,7 @@ function AppLayout() {
       </Headroom>
       <Main>
         <Outlet />
+        <CookiesAlert />
       </Main>
       <Footer />
     </>

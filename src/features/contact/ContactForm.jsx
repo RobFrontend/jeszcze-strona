@@ -115,7 +115,7 @@ function ContactForm() {
               <input type="email" name="email" required />
             </InputBox>
             <InputBox>
-              <label>Imię/Nazwa</label>
+              <label>Imię/Nazwa:</label>
               <input type="text" name="name" required />
             </InputBox>
             <InputBox>

@@ -240,6 +240,7 @@ function Home() {
         </StyledHeroContent>
       </Hero>
       <Features />
+
       {/* TRIPLE SECTION */}
       <SectionTriple>
         <Container>

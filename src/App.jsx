@@ -34,7 +34,7 @@ function App() {
             <Route path="omnie" element={<About />} />
             <Route path="wspolpraca" element={<Collab />} />
             <Route path="kontakt" element={<Contact />} />
-            <Route path="panel" element={<Panel />} />
+            <Route path="panel-edycji-blog" element={<Panel />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
