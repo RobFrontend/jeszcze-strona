@@ -2,9 +2,12 @@ import styled from "styled-components";
 import { useArticles } from "../features/blog/useArticles";
 import LoaderFull from "../ui/LoaderFull";
 import PanelArticles from "../features/panel/PanelArticles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useUser } from "../features/login/useUser";
+import { useCreateArticle } from "../features/panel/useCreateArticle";
+import { useForm } from "react-hook-form";
 
 const SectionForm = styled.section`
   background-color: var(--font-dark-white);
@@ -64,7 +67,8 @@ const AddPostButton = styled.button`
   box-shadow: var(--shadow-md);
   border-radius: var(--border-radius-md);
   justify-self: center;
-  margin: 1.8rem;
+  grid-column: 1/-1;
+  margin-top: 1.8rem;
   cursor: pointer;
   &:hover {
     opacity: 0.8;
@@ -87,8 +91,37 @@ const ArticlesBoxes = styled.div`
 `;
 
 function Panel() {
+  const navigate = useNavigate();
+  const { isLoading: isLoadingUser, isAuthenticated } = useUser();
   const [openForm, setOpenForm] = useState(false);
   const { articles, isLoading } = useArticles();
+  useEffect(
+    function () {
+      if (!isAuthenticated) navigate("/login");
+    },
+    [isAuthenticated, navigate]
+  );
+  //
+  const { isCreating, createArticle } = useCreateArticle();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { isSubmitting, errors },
+  } = useForm({
+    defaultValues: null,
+  });
+
+  function onSubmit(data) {
+    createArticle(
+      { ...data, img: data.img[0] },
+      { onSuccess: (data) => reset() }
+    );
+  }
+  //
+  if (isLoadingUser) return <LoaderFull />;
   if (isLoading) return <LoaderFull />;
   return (
     <>
@@ -106,26 +139,52 @@ function Panel() {
         {openForm === true ? (
           <Fade>
             <FormPanel>
-              <Form>
+              <Form onSubmit={handleSubmit(onSubmit)}>
                 <InputBox>
                   <label>Tytuł:</label>
-                  <Input type="text" />
+                  <Input
+                    type="text"
+                    id="tytul"
+                    {...register("tytul")}
+                    required
+                  />
                 </InputBox>
                 <InputBox>
                   <label>Tekst:</label>
-                  <TextArea type="text" />
+                  <TextArea
+                    type="text"
+                    id="tekst"
+                    {...register("tekst")}
+                    required
+                  />
                 </InputBox>
                 <InputBox>
                   <label>Wydawnictwo:</label>
-                  <Input type="text" />
+                  <Input
+                    type="text"
+                    id="wydawnictwo"
+                    {...register("wydawnictwo")}
+                    required
+                  />
                 </InputBox>
                 <InputBox>
                   <label>Autor:</label>
-                  <Input type="text" />
+                  <Input
+                    type="text"
+                    id="autor"
+                    {...register("autor")}
+                    required
+                  />
                 </InputBox>
                 <InputBox>
                   <label>Gatunek:</label>
-                  <Input type="text" placeholder="Fantasy, Horror" />
+                  <Input
+                    type="text"
+                    id="gatunek"
+                    placeholder="Fantasy, Horror"
+                    {...register("gatunek")}
+                    required
+                  />
                   <span>
                     Z wielkiej i po przecinku jak więcej niż 1 (nazwy i wielkie
                     litery dokładnie takie jak niżej)
@@ -137,11 +196,21 @@ function Panel() {
                 </InputBox>
                 <InputBox>
                   <label>Link Instagram:</label>
-                  <Input type="text" />
+                  <Input
+                    type="text"
+                    id="linkig"
+                    {...register("linkig")}
+                    required
+                  />
                 </InputBox>
                 <InputBox>
                   <label>Link LubimyCzytać:</label>
-                  <Input type="text" />
+                  <Input
+                    type="text"
+                    id="linklc"
+                    {...register("linklc")}
+                    required
+                  />
 
                   <span>(link do profilu jeśli nie ma tam posta): </span>
                   <span>
@@ -149,7 +218,13 @@ function Panel() {
                   </span>
                 </InputBox>
                 <InputBox>
-                  <input type="file" />
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="img"
+                    {...register("img")}
+                    required
+                  />
                   <span>
                     Zdjęcie najlepiej w formacie .webp i żeby nie było wyższe
                     ani szersze niż 900px
@@ -161,8 +236,8 @@ function Panel() {
                     - darmowy photoshop
                   </span>
                 </InputBox>
+                <AddPostButton disabled={isCreating}>Dodaj Post</AddPostButton>
               </Form>
-              <AddPostButton>Dodaj Post</AddPostButton>
             </FormPanel>
           </Fade>
         ) : null}

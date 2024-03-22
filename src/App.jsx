@@ -11,6 +11,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import GlobalStyles from "./styles/GlobalStyles";
 import { Toaster } from "react-hot-toast";
 import Panel from "./pages/Panel";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ function App() {
             <Route path="omnie" element={<About />} />
             <Route path="wspolpraca" element={<Collab />} />
             <Route path="kontakt" element={<Contact />} />
+            <Route path="login" element={<Login />} />
             <Route path="panel-edycji-blog" element={<Panel />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />

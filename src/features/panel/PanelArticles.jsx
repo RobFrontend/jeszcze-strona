@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IoTrashOutline } from "react-icons/io5";
+import { useDeleteArticle } from "./useDeleteArticle";
 
 const ArticleBox = styled.div`
   padding: 1.8rem;
@@ -56,6 +57,7 @@ const DeleteButton = styled.button`
 `;
 
 function PanelArticles({ article }) {
+  const { isDeleting, deleteArticle } = useDeleteArticle();
   return (
     <ArticleBox>
       <ArticeTextInfo>
@@ -65,7 +67,10 @@ function PanelArticles({ article }) {
         <p>{article.created_at.slice(0, 10)}</p>
       </ArticeTextInfo>
       <IMG src={article.img} alt={article.id} />
-      <DeleteButton>
+      <DeleteButton
+        disabled={isDeleting}
+        onClick={() => deleteArticle(article.id)}
+      >
         <IoTrashOutline />
       </DeleteButton>
     </ArticleBox>
