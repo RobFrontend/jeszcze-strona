@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { IoTrashOutline } from "react-icons/io5";
 import { useDeleteArticle } from "./useDeleteArticle";
+import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const ArticleBox = styled.div`
+  position: relative;
   padding: 1.8rem;
   display: grid;
   grid-template-columns: 40fr 40fr 20fr;
@@ -56,23 +59,62 @@ const DeleteButton = styled.button`
   }
 `;
 
+const NoDeleteButton = styled.button`
+  cursor: pointer;
+  background-color: green;
+  border: none;
+  font-size: 3.2rem;
+  &:hover {
+    opacity: 0.8;
+  }
+  @media screen and (max-width: 1260px) {
+    font-size: 2.4rem;
+  }
+  @media screen and (max-width: 650px) {
+    font-size: 1.8rem;
+    padding: 0.8rem;
+  }
+`;
+
 function PanelArticles({ article }) {
+  const [openConfirm, setOpenConfirm] = useState(false);
+  const [confirm, setConfirm] = useState(false);
   const { isDeleting, deleteArticle } = useDeleteArticle();
   return (
     <ArticleBox>
-      <ArticeTextInfo>
-        <p>{article.tytul}</p>
-        <p>{article.wydawnictwo}</p>
-        <p>{article.autor}</p>
-        <p>{article.created_at.slice(0, 10)}</p>
-      </ArticeTextInfo>
-      <IMG src={article.img} alt={article.id} />
-      <DeleteButton
-        disabled={isDeleting}
-        onClick={() => deleteArticle(article.id)}
-      >
-        <IoTrashOutline />
-      </DeleteButton>
+      {openConfirm === false ? (
+        <>
+          <ArticeTextInfo>
+            <p>{article.tytul}</p>
+            <p>{article.wydawnictwo}</p>
+            <p>{article.autor}</p>
+            <p>{article.created_at.slice(0, 10)}</p>
+          </ArticeTextInfo>
+          <IMG src={article.img} alt={article.id} />
+          <DeleteButton onClick={() => setOpenConfirm(true)}>
+            <IoTrashOutline />
+          </DeleteButton>
+        </>
+      ) : (
+        <>
+          <NoDeleteButton onClick={() => setOpenConfirm(false)}>
+            Nie
+          </NoDeleteButton>
+          <ArticeTextInfo>
+            <p>Chcesz usunąć {article.tytul}?</p>
+            <IMG src={article.img} alt={article.id} />
+          </ArticeTextInfo>
+          <DeleteButton
+            disabled={isDeleting}
+            onClick={() => {
+              deleteArticle(article.id);
+              setOpenConfirm(false);
+            }}
+          >
+            Tak
+          </DeleteButton>
+        </>
+      )}
     </ArticleBox>
   );
 }
