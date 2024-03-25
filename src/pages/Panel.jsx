@@ -150,11 +150,47 @@ function Panel() {
                   />
                 </InputBox>
                 <InputBox>
-                  <label>Tekst:</label>
+                  <label>Tekst (AKAPIT-1):</label>
                   <TextArea
                     type="text"
                     id="tekst"
                     {...register("tekst")}
+                    required
+                  />
+                </InputBox>
+                <InputBox>
+                  <label>Tekst2 (AKAPIT-2):</label>
+                  <TextArea
+                    type="text"
+                    id="tekst2"
+                    {...register("tekst2")}
+                    required
+                  />
+                </InputBox>
+                <InputBox>
+                  <label>Tekst3 (AKAPIT-3):</label>
+                  <TextArea
+                    type="text"
+                    id="tekst3"
+                    {...register("tekst3")}
+                    required
+                  />
+                </InputBox>
+                <InputBox>
+                  <label>Tekst4 (AKAPIT-4):</label>
+                  <TextArea
+                    type="text"
+                    id="tekst4"
+                    {...register("tekst4")}
+                    required
+                  />
+                </InputBox>
+                <InputBox>
+                  <label>Tekst5 (AKAPIT-5):</label>
+                  <TextArea
+                    type="text"
+                    id="tekst5"
+                    {...register("tekst5")}
                     required
                   />
                 </InputBox>

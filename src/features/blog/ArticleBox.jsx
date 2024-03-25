@@ -43,6 +43,7 @@ const TextArt = styled.p`
   font-size: 1.8rem;
   font-family: "Lora", serif;
   line-height: 1.5;
+  margin-bottom: 1.2rem;
 `;
 
 const ImgBox = styled.div`
@@ -96,6 +97,10 @@ function ArticleBox({ article }) {
     autor,
     gatunek,
     tekst,
+    tekst2,
+    tekst3,
+    tekst4,
+    tekst5,
     linkig,
     linklc,
     img,
@@ -121,7 +126,13 @@ function ArticleBox({ article }) {
             </TitleArt>
             <DataArt>{dataPostu.slice(0, 10)}</DataArt>
             <ArtContent>
-              <TextArt>{tekst}</TextArt>
+              <div>
+                <TextArt>{tekst}</TextArt>
+                <TextArt>{tekst2}</TextArt>
+                <TextArt>{tekst3}</TextArt>
+                <TextArt>{tekst4}</TextArt>
+                <TextArt>{tekst5}</TextArt>
+              </div>
               <ImgBox>
                 <ImgArt src={img} alt="image" />
                 <TextGatunek>Gatunek:</TextGatunek>

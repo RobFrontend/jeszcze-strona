@@ -97,13 +97,6 @@ function PanelArticles({ article }) {
         </>
       ) : (
         <>
-          <NoDeleteButton onClick={() => setOpenConfirm(false)}>
-            Nie
-          </NoDeleteButton>
-          <ArticeTextInfo>
-            <p>Chcesz usunąć {article.tytul}?</p>
-            <IMG src={article.img} alt={article.id} />
-          </ArticeTextInfo>
           <DeleteButton
             disabled={isDeleting}
             onClick={() => {
@@ -113,6 +106,12 @@ function PanelArticles({ article }) {
           >
             Tak
           </DeleteButton>
+          <ArticeTextInfo>
+            <p>Chcesz usunąć {article.tytul}?</p>
+          </ArticeTextInfo>
+          <NoDeleteButton onClick={() => setOpenConfirm(false)}>
+            Nie
+          </NoDeleteButton>
         </>
       )}
     </ArticleBox>
