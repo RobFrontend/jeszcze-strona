@@ -6,6 +6,7 @@ import LoaderFull from "../../ui/LoaderFull";
 import { useState } from "react";
 import Container from "../../ui/Container";
 import { Fade } from "react-awesome-reveal";
+import { useSearchParams } from "react-router-dom";
 
 const StyledBlogBoxes = styled.section`
   background: linear-gradient(
@@ -56,10 +57,14 @@ function BloxBoxes() {
   const [more, setMore] = useState(3);
   let { isLoading, articles } = useArticles();
 
+  const [gatunekParams, setGatunekParams] = useSearchParams();
+
   //////////////////////////////////////////////////////////////////////////
   // sort
   const [dataSort, setDataSort] = useState("Najnowsze");
-  const [gatunekSort, setGatunekSort] = useState("Wszystkie");
+  let [gatunekSort, setGatunekSort] = useState(
+    gatunekParams.toString().split("=").at(1) || "Wszystkie"
+  );
 
   if (articles) {
     // data
@@ -73,6 +78,7 @@ function BloxBoxes() {
         article.gatunek.includes(gatunekSort)
       );
     }
+    gatunekSort = gatunekParams.get("gatunek") || "";
   }
 
   // search autor
@@ -107,6 +113,8 @@ function BloxBoxes() {
     );
   ////////////////////////////////////////////////////////////////////////////////
 
+  // ////////////////////////
+
   if (isLoading) return <LoaderFull />;
   if (!articles) return <LoaderFull />;
 
@@ -133,6 +141,8 @@ function BloxBoxes() {
                   value={gatunekSort}
                   onChange={(e) => {
                     setGatunekSort(e.target.value);
+                    gatunekParams.set("gatunek", e.target.value);
+                    setGatunekParams(gatunekParams);
                   }}
                 >
                   <option value="Wszystkie">Wszystkie</option>
