@@ -62,7 +62,7 @@ function BloxBoxes() {
   //////////////////////////////////////////////////////////////////////////
   // sort
   const [dataSort, setDataSort] = useState("Najnowsze");
-  let [gatunekSort, setGatunekSort] = useState(
+  const [gatunekSort, setGatunekSort] = useState(
     gatunekParams.toString().split("=").at(1) || "Wszystkie"
   );
 
@@ -78,7 +78,6 @@ function BloxBoxes() {
         article.gatunek.includes(gatunekSort)
       );
     }
-    gatunekSort = gatunekParams.get("gatunek") || "";
   }
 
   // search autor
